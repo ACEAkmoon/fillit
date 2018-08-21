@@ -14,6 +14,6 @@ int		main(int argc, char **argv)
 		ft_memdel((void**)output);
 		return (0);
 	}
-	ft_putstr("usage: fillit input_file\n");
+	ft_error("usage: fillit input_file");
 	return (1);
 }
