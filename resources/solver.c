@@ -1,6 +1,6 @@
 #include "fillit.h"
 
-static char		**ft_reset(char **map, t_tetr *tetrimino, int size)
+static char		**ft_erase(char **map, t_tetr *tetrimino, int size)
 {
 	int		x;
 	int		y;
@@ -20,7 +20,7 @@ static char		**ft_reset(char **map, t_tetr *tetrimino, int size)
 	return (map);
 }
 
-static char		**ft_saved(char **map, t_tetr *tetrimino, int size)
+static char		**ft_write(char **map, t_tetr *tetrimino, int size)
 {
 	int		x;
 	int		y;
@@ -63,9 +63,9 @@ char			**ft_solve(char **map, t_tetr *tetrimino, int size)
 		{
 			tetrimino = ft_upd_coord(tetrimino, x, y);
 			if (ft_check_position(map, tetrimino, size))
-				if((tmp = ft_solve(ft_saved(map, tetrimino, size), tetrimino->next, size)))
+				if((tmp = ft_solve(ft_write(map, tetrimino, size), tetrimino->next, size)))
 					return (tmp);
-			map = ft_reset(map, tetrimino, size);
+			map = ft_erase(map, tetrimino, size);
 			++x;
 		}
 		++y;
