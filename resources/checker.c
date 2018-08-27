@@ -58,8 +58,7 @@ int		ft_check_valid(char *str)
 			ft_error("");
 		str++;
 	}
-	if (dot % 12 || sharp % 4 || ++newl % 5)
-		ft_error("");
+	BASE_ERROR(dot % 12 || sharp % 4 || ++newl % 5);
 	return (sharp / 4);
 }
 

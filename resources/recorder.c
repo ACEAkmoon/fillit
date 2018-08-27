@@ -27,8 +27,7 @@ t_tetr	*ft_recorder(char *str)
 	while (i-- > 0)
 	{
 		tetrimino->str = ft_strndup(str, 20);
-		if (!(ft_check_conect(tetrimino->str)))
-			ft_error("");
+		BASE_ERROR(!(ft_check_conect(tetrimino->str)));
 		tetrimino->output_symbol = ++symbol;
 		str += 21;
 		if (!(tetrimino->next = malloc(sizeof(t_tetr))))

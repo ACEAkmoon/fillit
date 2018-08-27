@@ -17,6 +17,8 @@
 # include <fcntl.h>
 # include "./libft/libft.h"
 
+# define BASE_ERROR(x) if (x) ft_error("");
+
 typedef struct		s_tetr
 {
 	int				x[4];
