@@ -35,7 +35,7 @@ char			**ft_fill_map(char **map, int size)
 		return (NULL);
 	while (y < size)
 		ft_memset(map[y++] = ft_strnew(size), '.', size);
-	map[y] = NULL;
+	map[y] = '\0';
 	return (map);
 }
 
