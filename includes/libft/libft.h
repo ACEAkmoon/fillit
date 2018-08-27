@@ -28,16 +28,17 @@ typedef struct		s_list
 void				*ft_memset(void *memptr, char val, size_t num);
 void				ft_bzero(void *memptr, size_t num);
 void				*ft_memcpy(void *destptr, const void *srcptr, size_t num);
-void				*ft_memccpy(void *dest, const void *src, int stop, size_t num);
+void				*ft_memccpy(void *dp, const void *sp, int stop, size_t num);
 void				*ft_memmove(void *destptr, const void *srcptr, size_t num);
 void				*ft_memchr(const void *memptr, int val, size_t num);
-int					ft_memcmp(const void *memptr1, const void *memptr2, size_t num);
+int					ft_memcmp(const void *ptr1, const void *ptr2, size_t num);
 
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 char				*ft_stralloc(const char *str);
 
 size_t				ft_strlen(const char *str);
+size_t				ft_arrcount(const char *str, char c);
 char				*ft_strdup(const char *srcptr);
 char				*ft_strndup(const char *srcptr, size_t n);
 char				*ft_strcpy(char *destptr, const char *srcptr);
@@ -45,8 +46,8 @@ char				*ft_strncpy(char *destptr, const char *srcptr, size_t num);
 char				*ft_strcat(char *destptr, const char *srcptr);
 char				*ft_strncat(char *destptr, char *srcptr, int num);
 size_t				ft_strlcat(char *destptr, const char *srcptr, size_t size);
-const char			*ft_strchr(const char *string, int symbol);
-const char			*ft_strrchr(const char *string, int symbol);
+char				*ft_strchr(const char *string, int symbol);
+char				*ft_strrchr(const char *string, int symbol);
 char				*ft_strstr(const char *string1, const char *string2);
 char				*ft_strnstr(const char *str1, const char *str2, size_t num);
 int					ft_strcmp(const char *string1, const char *string2);

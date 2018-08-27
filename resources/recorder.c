@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   recorder.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akrushin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/25 16:20:29 by akrushin          #+#    #+#             */
+/*   Updated: 2018/08/25 16:20:33 by akrushin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 t_tetr	*ft_recorder(char *str)
@@ -15,7 +27,7 @@ t_tetr	*ft_recorder(char *str)
 	while (i-- > 0)
 	{
 		tetrimino->str = ft_strndup(str, 20);
-		if(!(ft_check_conect(tetrimino->str)))
+		if (!(ft_check_conect(tetrimino->str)))
 			ft_error("");
 		tetrimino->output_symbol = ++symbol;
 		str += 21;

@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_arrcount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akrushin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/25 16:17:34 by akrushin          #+#    #+#             */
-/*   Updated: 2018/08/25 16:17:36 by akrushin         ###   ########.fr       */
+/*   Created: 2018/07/02 16:33:40 by akrushin          #+#    #+#             */
+/*   Updated: 2018/07/02 16:33:42 by akrushin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+size_t		ft_arrcount(const char *str, char c)
 {
-	t_tetr	*canvas;
-	char	**output;
+	size_t	i;
+	size_t	num_str;
 
-	if (argc == 2)
+	i = 0;
+	num_str = 0;
+	while (*str)
 	{
-		canvas = ft_coordination(ft_recorder(ft_reader(argv[1])));
-		output = ft_result(canvas, ft_map_size(canvas));
-		ft_output(output);
-		ft_memdel((void**)canvas);
-		ft_memdel((void**)output);
-		return (0);
+		if (i == 1 && *str == c)
+			i = 0;
+		else if (i == 0 && *str != c)
+		{
+			i = 1;
+			num_str++;
+		}
+		str++;
 	}
-	ft_error("usage: fillit input_file");
-	return (1);
+	return (++num_str);
 }

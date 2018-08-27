@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: akrushin <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/08/25 16:23:08 by akrushin          #+#    #+#              #
+#    Updated: 2018/08/25 16:23:09 by akrushin         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME		= fillit
 
@@ -46,6 +57,7 @@ fclean: clean
 	@rm -f $(NAME)
 	@echo "$(WAC)Removing fillit executable$(NOC)"
 
-re: fclean all
+re: fclean 
+	$(MAKE) all
 
 .PHONY: all, $(NAME), clean, fclean, re

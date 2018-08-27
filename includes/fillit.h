@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fillit.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akrushin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/25 16:15:31 by akrushin          #+#    #+#             */
+/*   Updated: 2018/08/25 16:15:32 by akrushin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILLIT_H
 # define FILLIT_H
-
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
@@ -8,7 +19,7 @@
 
 typedef struct		s_tetr
 {
-	int 			x[4];
+	int				x[4];
 	int				y[4];
 	char			*str;
 	char			output_symbol;

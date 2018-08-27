@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-const char	*ft_strchr(const char *string, int symbol)
+char	*ft_strchr(const char *string, int symbol)
 {
 	while (1)
 	{
 		if (*string == symbol)
-			return (string);
+			return ((char*)string);
 		else if (*string++ == '\0')
 			return (0);
 	}

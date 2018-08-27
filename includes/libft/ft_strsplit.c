@@ -12,27 +12,6 @@
 
 #include "libft.h"
 
-size_t		ft_arrlen(const char *s, char c)
-{
-	size_t	i;
-	size_t	num_str;
-
-	i = 0;
-	num_str = 0;
-	while (*s)
-	{
-		if (i == 1 && *s == c)
-			i = 0;
-		else if (i == 0 && *s != c)
-		{
-			i = 1;
-			num_str++;
-		}
-		s++;
-	}
-	return (++num_str);
-}
-
 char	**ft_strsplit(const char *s, char c)
 {
 	char	**ret;
@@ -40,7 +19,8 @@ char	**ft_strsplit(const char *s, char c)
 	size_t	i;
 	size_t	len;
 
-	if (!s || !c || !(ret = (char **)malloc(sizeof(char *) * ft_arrlen(s, c))))
+	if (!s || !c || !(ret = (char **)malloc(sizeof(char *) * \
+		ft_arrcount(s, c))))
 		return (0);
 	pointer_ret = ret;
 	i = 0;

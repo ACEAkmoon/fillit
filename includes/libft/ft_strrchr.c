@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-const char	*ft_strrchr(const char *string, int symbol)
+char	*ft_strrchr(const char *string, int symbol)
 {
 	int size;
 
 	size = ft_strlen(string) + 1;
 	while (size--)
 		if (string[size] == symbol)
-			return (string + size);
+			return ((char*)string + size);
 	return (0);
 }

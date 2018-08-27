@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akrushin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/25 16:16:27 by akrushin          #+#    #+#             */
+/*   Updated: 2018/08/25 16:16:29 by akrushin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 int		ft_check_conect(char *str)
@@ -41,11 +53,7 @@ int		ft_check_valid(char *str)
 		else if (*str == '#')
 			sharp++;
 		else if (*str == '\n')
-		{
-			if (*(str+1) == '\n' && dot % 12)
-				ft_error("");
-			newl++;
-		}
+			*(str + 1) == '\n' && dot % 12 ? ft_error("") : newl++;
 		else
 			ft_error("");
 		str++;
@@ -68,7 +76,8 @@ int		ft_check_position(char **map, t_tetr *tetrimino, int size)
 		x = 0;
 		while (x < size)
 		{
-			if (tetrimino->x[i] == x && tetrimino->y[i] == y && map[y][x] != '.')
+			if (tetrimino->x[i] == x && tetrimino->y[i] == y && \
+				map[y][x] != '.')
 				return (0);
 			else if (tetrimino->x[i] == x && tetrimino->y[i] == y)
 				i++;

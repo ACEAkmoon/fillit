@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   solver.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akrushin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/25 16:20:58 by akrushin          #+#    #+#             */
+/*   Updated: 2018/08/25 16:21:00 by akrushin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 static char		**ft_erase(char **map, t_tetr *tetrimino, int size)
@@ -63,7 +75,8 @@ char			**ft_solve(char **map, t_tetr *tetrimino, int size)
 		{
 			tetrimino = ft_upd_coord(tetrimino, x, y);
 			if (ft_check_position(map, tetrimino, size))
-				if((tmp = ft_solve(ft_write(map, tetrimino, size), tetrimino->next, size)))
+				if ((tmp = ft_solve(ft_write(map, tetrimino, size), \
+					tetrimino->next, size)))
 					return (tmp);
 			map = ft_erase(map, tetrimino, size);
 			++x;

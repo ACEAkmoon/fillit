@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akrushin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/25 16:18:40 by akrushin          #+#    #+#             */
+/*   Updated: 2018/08/25 16:18:44 by akrushin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 int				ft_map_size(t_tetr *tetrimino)
@@ -62,8 +74,7 @@ static t_tetr	*ft_rec_coord(t_tetr *tetrimino, char **str)
 			if (str[y][x] == '#')
 			{
 				tetrimino->x[i] = x;
-				tetrimino->y[i] = y;
-				i++;
+				tetrimino->y[i++] = y;
 			}
 			x++;
 		}
