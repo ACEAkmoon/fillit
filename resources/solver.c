@@ -62,12 +62,12 @@ char			**ft_solve(char **map, t_tetr *tetrimino, int size)
 {
 	int		x;
 	int		y;
-	char	**tmp;
+	char	**canvas;
 
 	if (!tetrimino->next)
 		return (map);
 	y = 0;
-	tmp = NULL;
+	canvas = NULL;
 	while (y < size)
 	{
 		x = 0;
@@ -75,9 +75,9 @@ char			**ft_solve(char **map, t_tetr *tetrimino, int size)
 		{
 			tetrimino = ft_upd_coord(tetrimino, x, y);
 			if (ft_check_position(map, tetrimino, size))
-				if ((tmp = ft_solve(ft_write(map, tetrimino, size), \
+				if ((canvas = ft_solve(ft_write(map, tetrimino, size), \
 					tetrimino->next, size)))
-					return (tmp);
+					return (canvas);
 			map = ft_erase(map, tetrimino, size);
 			++x;
 		}

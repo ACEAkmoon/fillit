@@ -14,15 +14,15 @@
 
 int		main(int argc, char **argv)
 {
-	t_tetr	*canvas;
+	t_tetr	*t_blok;
 	char	**output;
 
 	if (argc == 2)
 	{
-		canvas = ft_coordination(ft_recorder(ft_reader(argv[1])));
-		output = ft_result(canvas, ft_map_size(canvas));
+		t_blok = ft_coordination(ft_recorder(ft_reader(argv[1])));
+		output = ft_result(t_blok, ft_map_size(t_blok));
 		ft_output(output);
-		ft_memdel((void**)canvas);
+		ft_memdel((void**)t_blok);
 		ft_memdel((void**)output);
 		return (0);
 	}
