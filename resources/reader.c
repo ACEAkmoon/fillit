@@ -14,19 +14,19 @@
 
 char	*ft_reader(char *file)
 {
-	int		logdtype;
+	int		fd;
 	size_t	i;
 	char	tmp[545];
 	char	buf_symb[1];
 
 	i = 0;
-	BASE_ERROR((logdtype = open(file, O_RDONLY)) == -1);
-	while (read(logdtype, buf_symb, 1))
+	BASE_ERROR((fd = open(file, O_RDONLY)) == -1);
+	while (read(fd, buf_symb, 1))
 	{
 		tmp[i++] = buf_symb[0];
 		BASE_ERROR(i > 545);
 	}
 	tmp[i] = '\0';
-	BASE_ERROR(close(logdtype) == -1)
+	BASE_ERROR(close(fd) == -1)
 	return (ft_strdup(tmp));
 }
