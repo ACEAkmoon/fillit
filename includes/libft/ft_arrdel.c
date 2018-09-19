@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_arrdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akrushin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/25 16:17:34 by akrushin          #+#    #+#             */
-/*   Updated: 2018/08/25 16:17:36 by akrushin         ###   ########.fr       */
+/*   Created: 2018/09/08 14:30:37 by akrushin          #+#    #+#             */
+/*   Updated: 2018/09/08 14:30:39 by akrushin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+void	ft_arrdel(char **arr)
 {
-	t_tetr	*t_blok;
-	char	*string;
-	char	**output;
+	int i;
 
-	if (argc == 2)
+	i = -1;
+	if (arr && *arr)
 	{
-		string = ft_reader(argv[1]);
-		t_blok = ft_coordination(ft_recorder(string));
-		output = ft_result(t_blok, ft_map_size(t_blok));
-		ft_output(output);
-		ft_arrdel(output);
-		return (0);
+		while (arr[++i])
+		{
+			free(arr[i]);
+			arr[i] = NULL;
+		}
+		free(arr);
+		arr = NULL;
 	}
-	ft_error("usage: fillit input_file");
-	return (1);
 }

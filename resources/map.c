@@ -86,12 +86,15 @@ static t_tetr	*ft_rec_coord(t_tetr *tetrimino, char **str)
 t_tetr			*ft_coordination(t_tetr *tetrimino)
 {
 	t_tetr	*t_pointer;
+	char	**string;
 
 	t_pointer = tetrimino;
 	while (tetrimino->next)
 	{
-		tetrimino = ft_rec_coord(tetrimino, ft_strsplit(tetrimino->str, '\n'));
+		string = ft_strsplit(tetrimino->str, '\n');
+		tetrimino = ft_rec_coord(tetrimino, string);
 		free(tetrimino->str);
+		ft_arrdel(string);
 		tetrimino = tetrimino->next;
 	}
 	return (t_pointer);

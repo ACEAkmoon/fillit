@@ -27,6 +27,6 @@ char	*ft_reader(char *file)
 		BASE_ERROR(i > 545);
 	}
 	tmp[i] = '\0';
-	BASE_ERROR(close(fd) == -1)
+	BASE_ERROR(close(fd) == -1);
 	return (ft_strdup(tmp));
 }

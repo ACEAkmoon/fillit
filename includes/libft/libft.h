@@ -33,8 +33,10 @@ void				*ft_memmove(void *destptr, const void *srcptr, size_t num);
 void				*ft_memchr(const void *memptr, int val, size_t num);
 int					ft_memcmp(const void *ptr1, const void *ptr2, size_t num);
 
-void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
+void				ft_strdel(char **as);
+void				ft_arrdel(char **arr);
+void				*ft_memalloc(size_t size);
 char				*ft_stralloc(const char *str);
 
 size_t				ft_strlen(const char *str);
@@ -55,7 +57,6 @@ int					ft_strncmp(const char *str1, const char *str2, size_t num);
 int					ft_atoi(const char *string);
 
 char				*ft_strnew(size_t size);
-void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));

@@ -32,7 +32,7 @@ SRC		= ft_lstmap.c ft_stralloc.c ft_strncpy.c ft_atoi.c ft_lstnew.c\
 	ft_strjoin.c ft_tolower.c ft_isupper.c ft_putendl.c ft_strlcat.c ft_toupper.c\
 	ft_itoa.c ft_putendl_fd.c ft_strlen.c ft_lstadd.c ft_putnbr.c ft_strmap.c\
 	ft_lstdel.c ft_putnbr_fd.c ft_strmapi.c ft_lstdelone.c ft_putstr.c ft_strncat.c\
-	ft_lstiter.c ft_putstr_fd.c ft_strncmp.c ft_arrcount.c
+	ft_lstiter.c ft_putstr_fd.c ft_strncmp.c ft_arrcount.c ft_arrdel.c
 
 OBJ		= $(SRC:.c=.o)
 

@@ -33,7 +33,7 @@ char	**ft_result(t_tetr *tetrimino, int size)
 
 void	ft_output(char **output)
 {
-	BASE_ERROR(!output || !*output)
+	BASE_ERROR(!output || !*output);
 	while (*output)
 		ft_putendl(*output++);
 }
